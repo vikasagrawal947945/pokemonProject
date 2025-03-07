@@ -70,7 +70,9 @@ function displayData(data) {
         name.innerText = obj.name;
         
         const types=[];
-        obj.types.forEach((object) => object.type.name);
+        obj.types.forEach((object) => 
+         types.push(object.type.name));
+        
         type.innerHTML = `<strong>Type:</strong> ${types.toString()}`;
         
         div.append(img, name, type);

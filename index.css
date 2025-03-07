@@ -1,0 +1,107 @@
+* {
+     margin: 0px;
+     padding: 0px;
+     box-sizing: border-box;
+     font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+     background-color: rgba(0, 0, 0, 0.911);
+}
+
+.wrapper {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-top: 3rem;
+     gap: 10px;
+}
+
+#search {
+     height: 40px;
+     width: 25%;
+     font-size: 0.8rem;
+     font-weight: 600;
+     color: rgb(252, 252, 252);
+     background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2220%22%20height%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22blue%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222%22%20viewBox%3D%220%200%2024%2024%22%3E%3Ccircle%20cx%3D%2211%22%20cy%3D%2211%22%20r%3D%228%22/%3E%3Cline%20x1%3D%2221%22%20y1%3D%2221%22%20x2%3D%2216.65%22%20y2%3D%2216.65%22/%3E%3C/svg%3E') no-repeat 10px center;
+     border-radius: 5px;
+     padding-left: 40px;
+
+}
+
+#typeFilter {
+     height: 40px;
+     width: 10%;
+     font-size: 0.8rem;
+     font-weight: 600;
+}
+
+option {
+     font-size: 0.8rem;
+     font-weight: 600;
+}
+
+#loadMore {
+     position: fixed;
+     bottom: 2rem;
+     right: 5rem;
+     color: rgb(8, 94, 255);
+     font-size: 2rem;
+     height: 40px;
+     width: 40px;
+     font-weight: bold;
+     background-color: transparent;
+     border-radius: 50%;
+
+}
+
+#loading {
+     text-align: center;
+     position: fixed;
+     top: 25%;
+     left: 32%;
+     color: rgb(37, 0, 202);
+     font-size: 2rem;
+}
+
+#pokemons {
+     display: grid;
+     grid-template-columns: repeat(4, 0.1fr);
+     /* 4 equal columns */
+     align-items: center;
+     justify-content: center;
+     justify-items: center;
+     flex-wrap: wrap;
+     margin-top: 40px;
+     gap: 21px
+}
+
+#pokemons>h1 {
+     color: white;
+     text-align: center;
+     position: fixed;
+     top: 30%
+}
+
+img {
+     background-color: transparent;
+     width: 170px;
+     height: 170px;
+     perspective: 1000px;
+}
+
+.parent {
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+     max-width: 300px;
+     margin-top: 10px;
+     text-align: center;
+     padding: 25px;
+     background-color: #ffffff;
+}
+
+.parent:hover {
+     cursor: pointer;
+     box-shadow: 8px 8px 20px rgba(12, 3, 148, 0.904);
+     background-color: burlywood;
+
+}

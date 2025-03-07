@@ -60,20 +60,21 @@ option {
      position: fixed;
      top: 25%;
      left: 32%;
-     color:aliceblue;
+     color: aliceblue;
      font-size: 2rem;
 }
 
 #pokemons {
-     display: grid;
-     grid-template-columns: repeat(4, 0.1fr);
-     /* 4 equal columns */
+     display: flex;
+     /* grid-template-columns: repeat(4, 1fr); */
      align-items: center;
      justify-content: center;
      justify-items: center;
      flex-wrap: wrap;
      margin-top: 40px;
-     gap: 21px
+     gap: 1.5rem;
+     width: 80%;
+     margin: 2rem auto;
 }
 
 #pokemons>h1 {

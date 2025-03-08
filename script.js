@@ -33,15 +33,24 @@ search.addEventListener("keyup", (e) => {
 });
 
 select.addEventListener("change", (e) => {
-    const copy = finaldata;
-    
-    if (e.target.value === "all") displayData(finaldata);
-    else {
-        displayData(
-            copy.filter((pokemon) => 
-                pokemon.types.some((type) => type.type.name === e.target.value)
-            )
+    console.log(e.target.value); // Debugging ke liye
+
+    if (e.target.value === "all") {
+        pokemonsDiv.innerHTML = "";
+        displayData(finaldata);
+    } else {
+        const filteredPokemons = finaldata.filter((pokemon) => 
+            pokemon.types.some((typeObj) => typeObj.type.name === e.target.value)
         );
+         if(filteredPokemons.length==0){
+            pokemonsDiv.innerHTML  ="<h1>No Pokemons Found</h1>";
+            return;
+         }
+        console.log(filteredPokemons); // Debugging ke liye
+
+        // **UI Clear Karne Ka Proper Tareeka**
+        pokemonsDiv.innerHTML = ""; // Purane Pokemons ko hatao
+        displayData(filteredPokemons); // Naye Filtered Pokemons Show Karo
     }
 });
 

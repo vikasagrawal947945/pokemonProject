@@ -6,21 +6,41 @@
 }
 
 body {
-     background-color:rgb(168, 59, 59)
+     background-color :#1E1E2F;
+     color: #fff;
 }
 .geeksterMon{
      font-family: 'Grandstander', cursive;
-    text-align: center;
     font-size: 70px;
-    margin-top: 45px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 4rem;
+    font-weight: 800;
+    text-shadow: 0 4px 10px rgba(255, 255, 255, 0.438);
+    text-align: center;
+}
+#reset{
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 2px;
+      height: 40px;
+      width: 80px;
+      text-align: center;
+      font-weight: 700;
+      background-color:#6C5CE7
+}
+#reset:hover{
+     background-color: #A29BFE;
+    box-shadow: 0 0 12px rgba(162, 155, 254, 0.8);
+    transition: all 0.3s ease-in-out;
 }
 
 .wrapper {
      display: flex;
      justify-content: center;
      align-items: center;
-     margin-top: 3rem;
+     margin-top: 1rem;
      gap: 10px;
      margin-bottom: 30px;
 }
@@ -32,9 +52,9 @@ body {
      font-weight: 600;
      color: rgb(252, 252, 252);
      background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2220%22%20height%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22blue%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222%22%20viewBox%3D%220%200%2024%2024%22%3E%3Ccircle%20cx%3D%2211%22%20cy%3D%2211%22%20r%3D%228%22/%3E%3Cline%20x1%3D%2221%22%20y1%3D%2221%22%20x2%3D%2216.65%22%20y2%3D%2216.65%22/%3E%3C/svg%3E') no-repeat 10px center;
-     border-radius: 5px;
+     border-radius: 10px;
      padding-left: 40px;
-     background-color: wheat;
+     background-color: #F4D03F;
 
 }
 
@@ -42,6 +62,8 @@ body {
      height: 40px;
      width: 10%;
      font-size: 0.8rem;
+     background-color: #F4D03F;
+     border-radius: 10px;
      font-weight: 600;
 }
 

@@ -6,7 +6,14 @@
 }
 
 body {
-     background-color: rgba(0, 0, 0, 0.911);
+     background-color:rgb(168, 59, 59)
+}
+.geeksterMon{
+     font-family: 'Grandstander', cursive;
+    text-align: center;
+    font-size: 70px;
+    margin-top: 45px;
+    margin-bottom: 20px;
 }
 
 .wrapper {
@@ -15,6 +22,7 @@ body {
      align-items: center;
      margin-top: 3rem;
      gap: 10px;
+     margin-bottom: 30px;
 }
 
 #search {
@@ -26,20 +34,17 @@ body {
      background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2220%22%20height%3D%2220%22%20fill%3D%22none%22%20stroke%3D%22blue%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%222%22%20viewBox%3D%220%200%2024%2024%22%3E%3Ccircle%20cx%3D%2211%22%20cy%3D%2211%22%20r%3D%228%22/%3E%3Cline%20x1%3D%2221%22%20y1%3D%2221%22%20x2%3D%2216.65%22%20y2%3D%2216.65%22/%3E%3C/svg%3E') no-repeat 10px center;
      border-radius: 5px;
      padding-left: 40px;
+     background-color: wheat;
 
 }
 
-#typeFilter {
+#typeFilter, option {
      height: 40px;
      width: 10%;
      font-size: 0.8rem;
      font-weight: 600;
 }
 
-option {
-     font-size: 0.8rem;
-     font-weight: 600;
-}
 
 #loadMore {
      position: fixed;
@@ -50,59 +55,90 @@ option {
      height: 40px;
      width: 40px;
      font-weight: bold;
-     background-color: transparent;
+     background-color: black;
      border-radius: 50%;
+     z-index: 1;
 
 }
 
 #loading {
      text-align: center;
      position: fixed;
-     top: 25%;
+     top: 40%;
      left: 32%;
-     color: aliceblue;
+     color: blue;
      font-size: 2rem;
 }
 
+
+
+/* Center Cards & Add Spacing */
 #pokemons {
      display: flex;
-     /* grid-template-columns: repeat(4, 1fr); */
-     align-items: center;
-     justify-content: center;
-     justify-items: center;
      flex-wrap: wrap;
-     margin-top: 40px;
-     gap: 1.5rem;
-     width: 80%;
-     margin: 2rem auto;
-}
-
-#pokemons>h1 {
+     justify-content: center;
+     gap: 60px;
+     padding: 20px;
+ }
+ 
+ /* Card Size & Flip Effect */
+ .card {
+     width: 220px;
+     height: 270px;
+     position: relative;
+     transform-style: preserve-3d;
+     transition: transform 0.6s;
+     border-radius: 12px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.308) ;
+      perspective: 1200px;
+ }
+ 
+ .card.flip {
+     transform: rotateY(180deg);
+ }
+ 
+ /* Front & Back Side */
+ .front, .back {
+     width: 220px;
+     height: 300px;
+     position: absolute;
+     backface-visibility: hidden;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     border-radius: 12px;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.247);
+     padding: 30px;
+     
+     
+ }
+ 
+ .back {
+     transform: rotateY(180deg);
+ }
+ 
+ /* Pokémon Image */
+ .poke-img {
+     width: 150px;
+     height: 150px;
+     margin-bottom: 20px;
+ }
+ 
+ /* Pokémon Name & Type */
+ .poke-name {
+     font-size: 19px;
+     font-weight: bold;
      color: white;
-     text-align: center;
-     position: fixed;
-     top: 30%
-}
-
-img {
-     background-color: transparent;
-     width: 170px;
-     height: 170px;
-     perspective: 1000px;
-}
-
-.parent {
-     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-     max-width: 300px;
-     margin-top: 10px;
-     text-align: center;
-     padding: 25px;
-     background-color: #ffffff;
-}
-
-.parent:hover {
-     cursor: pointer;
-     box-shadow: 8px 8px 20px rgba(12, 3, 148, 0.904);
-     background-color: burlywood;
-
-}
+     text-shadow: 1px 1px 2px black;
+     margin:10px auto;
+ }
+ 
+ .poke-type {
+     font-size: 15px;
+     font-weight: bold;
+     color: white;
+      margin:5px auto ;
+ }
+ 

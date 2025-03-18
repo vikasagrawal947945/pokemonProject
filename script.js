@@ -29,9 +29,15 @@ async function getPokemons(URL) {
     
     displayData(finaldata);
 }
-
-search.addEventListener("keyup", (e) => {
-    if (e.target.value.length >= 0) {
+ function debounce(func ,delay){
+  let timer ;
+  return function(e){
+     timer = setTimeout(()=> func(e),delay);
+  }
+ }
+const debounceSearch  = debounce(SearchPokemon , 5000);
+search.addEventListener("keyup" , debounceSearch);
+function SearchPokemon(e) {
         const searchedPokemons = finaldata.filter((obj) => obj.name.includes(e.target.value));
         
         pokemonsDiv.innerHTML = searchedPokemons.length === 0 
@@ -40,7 +46,6 @@ search.addEventListener("keyup", (e) => {
         
         if (searchedPokemons.length > 0) displayData(searchedPokemons);
     }
-});
 
 select.addEventListener("change", (e) => {
     console.log(e.target.value); // Debugging ke liye
@@ -84,6 +89,7 @@ resetButton.addEventListener("click", () => {
 
 function displayData(data) {
     loadingDiv.style.display = "block";
+
     pokemonsDiv.innerHTML = ""; // Old data clear karne ke liye
     const fragment = document.createDocumentFragment();
 
@@ -139,9 +145,8 @@ function displayData(data) {
             card.classList.toggle("flip");
         });
     });
-     
-
-    loadingDiv.style.display = "none";
+      
+    loadingDiv.style.display ="none";
     pokemonsDiv.append(fragment);
 }
 
